@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load i18n %} {# for translate#}
+
+{% block title %}{% trans 'Мой кабинет' %}{% endblock %}
+
+{% load staticfiles %}
+
+{% block content %}
+    <h3>{% trans 'Мой профиль' %}</h3>
+    <div class="container">
+    {% if user.profile.avatar %}
+        <p><img src="{{ user.profile.avatar }}" alt="avatar" width="200" ></p>
+    {% else %}
+        <p><img src="{% static 'img/anthem.jpg' %}" alt="avatar" width="200" ></p>
+    {% endif %}
+
+    <h3>{{ user.get_full_name }}</h3>
+        <ul>
+            <li>{% trans 'Имя пользователя' %}: {{ user.username }}</li>
+            <li>{% trans 'Почта' %}: {{ user.email }}</li>
+            <li>{% trans 'День рождения' %}: {{ user.profile.birth_date }}</li>
+            <li>{% trans 'Цель на ближайшие 3 месяца' %}: {{ user.profile.purpose }}</li>
+            <li>{% trans 'Дата регистрации' %}: {{ user.date_joined }}</li>
+        </ul>
+
+   <a class="nav-link-dark" href={% url 'myaccount:profile_edit' pk=profile.id %}>{% trans 'Редактировать' %}</a>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% load static i18n %}
+
+{% if user.is_authenticated %}
+    <li>{% include 'switch_locate.html' %}</li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href={% url 'index' %}>Chernika Gym</a>
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href={% url 'myaccount:profile' pk=user.id %}>{% trans 'Мой кабинет' %}</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link" href={% url 'exercises:list' %}>{% trans 'Тренировки' %}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Бонусы' %}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Контакты' %}</a>
+                </li>
+            </ul>
+            <a class="btn btn-sm btn-light" href={% url 'logout' %}>{% trans 'Выйти' %}({{ user.username }})</a>
+        </div>
+    </nav>
+
+{% else %}
+        <li>{% include 'switch_locate.html' %}</li>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <a class="navbar-brand" href="#">Chernika Gym</a>
+        <button class="navbar-toggler" type="button"
+                data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">{% trans 'О нас' %}</a>
+                </li>
+
+{#                <li class="nav-item">#}
+{#                    <a class="nav-link" href="#">{% trans 'Бар' %}</a>#}
+{#                </li>#}
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Цены' %}</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#">{% trans 'Контакты' %}</a>
+                </li>
+
+{#                <li class="pull-right">#}
+{#                    <a class="nav-link" href="#">{% trans '' %}</a>#}
+{#                </li>#}
+{#                <li class="pull-right">#}
+{#                    <a class="nav-link" href="#">{% trans 'Контакты' %}</a>#}
+{#                </li>                #}
+            </ul>
+            class=""
+            <a class="btn btn-sm btn-light" href={% url 'login' %}>{% trans 'Войти' %}</a>
+            <a class="btn btn-sm btn-outline-light" href={% url 'register' %}>
+                {% trans 'Регистрация' %}
+            </a>
+        </div>
+    </nav>
+{% endif %}

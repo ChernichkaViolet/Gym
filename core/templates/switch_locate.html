@@ -1,0 +1,70 @@
+{#<!-- Не забудьте указать {% load i18n %} в начале шаблона -->#}
+{#{% for lang in LANGUAGES %}#}
+{#    <li>#}
+{#	  <form name="setLang{{ lang.1}}" action="" method="POST">#}
+{#	  {% csrf_token %}#}
+{#	    <input name="next" type="hidden" value="/">#}
+{#	    <input type="hidden" name="language" value="{{ lang.0 }}">#}
+{#	    <a href="#" onclick="document.setLang{{ lang.1 }}.submit();#}
+{#		    return false;">{{ lang.1 }}</a>#}
+{#	  </form>#}
+{#	</li>#}
+{#  {% endfor %}#}
+{##}
+{##}
+{#{% if LANGUAGE_CODE == 'ru' %}#}
+{#    <p>{{ article.text_rus | safe}} </p>#}
+{#{% endif %}#}
+{##}
+{#{% if LANGUAGE_CODE == 'en' %}#}
+{#    <p>{{ article.text_eng | safe}} </p>#}
+{#{% endif %}#}
+{##}
+{##}
+{##}
+{##}
+{##}
+{#{% trans 'Change your locale' %}:#}
+{#<form action="/i18n/setlang/" method="POST">#}
+{#  {% csrf_token %}#}
+{#  <input name="next" type="hidden" value="/accounts/profile/" /><br/>#}
+{#  <select name="language">#}
+{#    {% for lang in LANGUAGES %}#}
+{#      <option value="{{ lang.0 }}">{{ lang.1 }}</option>#}
+{#    {% endfor %}#}
+{#  </select><br/>#}
+{#  <input type="submit" value="{% trans 'change' %}" />#}
+{#</form>#}
+{##}
+{#{% get_current_language as LANGUAGE_CODE %}#}
+{#{% get_available_languages as LANGUAGES %}#}
+{#<p class="navbar-text">{% trans 'Выберите язык' %}:&nbsp;</p>#}
+{#<div class="btn-group btn-group-sm" role="group" aria-label="Lang Switch">#}
+{#    {% for lang_code, lang_name in LANGUAGES %}#}
+{#        <a href="/{{ lang_code }}{{ request.get_full_path|slice:"3:" }}"#}
+{#           class="btn btn-outline-success{% if lang_code == LANGUAGE_CODE %}#}
+{#            active#}
+{#{% endif %}"#}
+{##}
+{#           title="{% trans lang_name %}">{{ lang_code }}</a>#}
+{#        <a name="langBtn" href="javascript:void(0)" class="btn btn-outline-success{% if lang_code == LANGUAGE_CODE %} active{% endif %}" title="{% trans lang_name %}">{{ lang_code }}</a>#}
+{#    {% endfor %}#}
+{#</div>#}
+
+
+{% load i18n %}
+
+<form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+    <input name="next" type="hidden" value="{{ redirect_to }}">
+    <select name="language">
+        {% get_current_language as LANGUAGE_CODE %}
+        {% get_available_languages as LANGUAGES %}
+        {% get_language_info_list for LANGUAGES as languages %}
+        {% for language in languages %}
+            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                {{ language.name_local }} ({{ language.code }})
+            </option>
+        {% endfor %}
+    </select>
+    <input type="submit" value="Go">
+</form>

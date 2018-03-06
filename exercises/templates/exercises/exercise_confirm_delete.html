@@ -1,0 +1,6 @@
+{% load i18n %}
+<form action="" method="post">{% csrf_token %}
+    <p>{% trans 'Вы уверены, что хотите удалить запись :' %} "{{ object }}"?</p>
+    <input type="submit" value="Yes" />
+    <a href="{% url 'exercises:list' %}">{% trans 'Нет' %}</a>
+</form>

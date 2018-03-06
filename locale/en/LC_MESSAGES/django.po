@@ -1,0 +1,203 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-02-23 20:08+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: account/forms.py:9
+msgid "Имя "
+msgstr "Name"
+
+#: account/forms.py:13
+msgid "Фамилия"
+msgstr "Last Name"
+
+#: account/forms.py:17 core/models.py:87
+msgid "День Рождения"
+msgstr "BirthDay"
+
+#: account/forms.py:21 account/templates/my_profile.html:22 core/models.py:88
+msgid "Цель на ближайшие 3 месяца"
+msgstr "Goal for the next 3 months"
+
+#: account/templates/my_profile.html:4 account/templates/my_profile_edit.html:4
+#: core/templates/header.html:18
+msgid "Мой кабинет"
+msgstr "My profile"
+
+#: account/templates/my_profile.html:9
+msgid "Мой профиль"
+msgstr "My profile"
+
+#: account/templates/my_profile.html:19 core/forms.py:11
+msgid "Имя пользователя"
+msgstr "Username"
+
+#: account/templates/my_profile.html:20
+msgid "Почта"
+msgstr "Email"
+
+#: account/templates/my_profile.html:21
+msgid "День рождения"
+msgstr "BirthDay"
+
+#: account/templates/my_profile.html:23
+msgid "Дата регистрации"
+msgstr "Registration day"
+
+#: account/templates/my_profile.html:26
+#: exercises/templates/exercises_list.html:18
+msgid "Редактировать"
+msgstr "Edit"
+
+#: account/templates/my_profile_edit.html:17
+msgid "Заполнить профиль"
+msgstr "Edit profile"
+
+#: account/templates/my_profile_edit.html:54
+msgid "Сохранить"
+msgstr "Save"
+
+#: core/forms.py:19
+msgid "Пароль"
+msgstr ""
+
+#: core/forms.py:24
+msgid "Подтвердите пароль"
+msgstr "Password"
+
+#: core/forms.py:33
+msgid "Пользователь с таким именем уже существует."
+msgstr "User with that name already exists."
+
+#: core/forms.py:42
+msgid "Пользователь с таким email уже существует."
+msgstr "User with that email already exists"
+
+#: core/forms.py:53
+msgid "Пароли не совпадают"
+msgstr "Passwords do not match"
+
+#: core/models.py:43
+msgid "Срок действия ссылки на активацию, ч."
+msgstr "Link is active for, hours "
+
+#: core/models.py:47
+msgid "Аватар пользователя по умолчанию"
+msgstr "Default avatar"
+
+#: core/models.py:52
+msgid "Настройки сайта"
+msgstr "Settings"
+
+#: core/models.py:57
+msgid "Дата окончания действия ссылки активации"
+msgstr "Activation link expiration date"
+
+#: core/models.py:60
+msgid "Ссылка"
+msgstr "Link"
+
+#: core/models.py:91
+msgid "Аватар"
+msgstr "Avatar"
+
+#: core/models.py:96
+msgid "Активация"
+msgstr "Activation"
+
+#: core/templates/header.html:21
+msgid "Тренировки"
+msgstr "Trainings"
+
+#: core/templates/header.html:24
+msgid "Бонусы"
+msgstr "Bonuses"
+
+#: core/templates/header.html:28 core/templates/header.html:62
+msgid "Контакты"
+msgstr "Contacts"
+
+#: core/templates/header.html:31
+msgid "Выйти"
+msgstr "Log out"
+
+#: core/templates/header.html:50
+msgid "О нас"
+msgstr "About"
+
+#: core/templates/header.html:58
+msgid "Цены"
+msgstr "Prices"
+
+#: core/templates/header.html:73 core/templates/registration/login.html:11
+msgid "Войти"
+msgstr "Log in"
+
+#: core/templates/header.html:75 core/templates/register_form.html:3
+#: core/utils.py:8
+msgid "Регистрация"
+msgstr "Sign up"
+
+#: core/templates/register_form.html:16
+msgid "Зарегистрироваться"
+msgstr "Sign up"
+
+#: core/utils.py:10
+msgid "Вы зарегистрировались на сайте. Ссылка для активации:"
+msgstr "You are signed up. The activation link"
+
+#: core/views.py:52
+msgid "Не удалось создать учётную запись. Обратитесь к администратору."
+msgstr "Creating an account is failed. Please, contact your administrator."
+
+#: core/views.py:58
+msgid "Учётная запись успешно создана. Уведомление в ящике."
+msgstr "The account is created. The notification email has been sent to e-mail"
+
+#: core/views.py:82
+msgid "Не удалось активировать учётную запись."
+msgstr "Account activation failed"
+
+#: exercises/templates/exercises/exercise_confirm_delete.html:3
+msgid "Вы уверены, что хотите удалить запись :"
+msgstr "Do you confirm the deletion of the post?"
+
+#: exercises/templates/exercises/exercise_confirm_delete.html:5
+msgid "Нет"
+msgstr "No"
+
+#: exercises/templates/exercises_create.html:5
+#: exercises/templates/exercises_create.html:8
+msgid "Новое упражение"
+msgstr "New exercise"
+
+#: exercises/templates/exercises_create.html:12
+msgid "Создать"
+msgstr "Create"
+
+#: exercises/templates/exercises_list.html:3
+msgid "Упражнения"
+msgstr "Exercises"
+
+#: exercises/templates/exercises_list.html:9
+msgid "Новое упражнение"
+msgstr "New exercise"
+
+#: exercises/templates/exercises_list.html:19
+msgid "Удалить"
+msgstr "Delete"

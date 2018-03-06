@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+{% load i18n %}
+{% block title %}{{ block.super }}{% trans 'Упражнения' %}{% endblock %}
+{% block nav %}
+    {% include 'header.html' %}
+{% endblock %}
+
+{% block content %}
+    <div class="container" style="margin-top: 2rem">
+
+        <div class="row">
+            <div class="col-sm-3 text-center" style="border-right: 1px solid">Created Date</div>
+            <div class="col-sm-3 text-center" style="border-right: 1px solid">Description</div>
+            <div class="col-sm-2 text-center" style="border-right: 1px solid">Quantity</div>
+            <div class="col-sm-2 text-center" style="border-right: 1px solid">Repeats</div>
+            <div class="col-sm-2 text-center">Delete</div>
+        </div>
+        <br>
+        <br>
+        <div class="row">
+            {% for exercises in exercises_list %}
+                <div class="col-sm-3 text-center">{{ exercises.created_date }}</div>
+                <div class="col-sm-3 text-center">{{ exercises.description }}</div>
+                <div class="col-sm-2 text-center">{{ exercises.set_quantity }}</div>
+                <div class="col-sm-2 text-center">{{ exercises.repeats }}</div>
+                {#                <a href="{% url 'detail' pk=exercises.pk %}">{% trans 'Подробнее' %}</a>#}
+                {#                <a href="{% url 'exercises:update' pk=exercises.id %}">{% trans 'Редактировать' %}</a>#}
+                <div class="col-sm-2 text-center">
+                    <a href="{% url 'exercises:delete' pk=exercises.id %}">{% trans 'Удалить' %}</a>
+                </div>
+            {% endfor %}
+        </div>
+        <div class="row" style="margin-top: 1rem; margin-left:1rem">
+            <div class="col-sm-6">
+                <a class="btn btn-secondary" href="{% url 'exercises:create' %}">{% trans 'Новое упражнение' %}</a>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
+
+
+{#            'description',#}
+{#            'set_quantity',#}
+{#            'repeats',##}
+{#created_date}#}

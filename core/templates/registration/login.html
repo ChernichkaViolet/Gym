@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-top: 2rem;">
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-outline-dark">{% trans 'Войти' %}</button>
+  </form>
+</div>
+{% endblock %}
+
+{#{% extends 'main.html' %}#}
+
+{##}
+{#{% block title %}Login{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <div class="container"c>#}
+{#    <form method="post">#}
+{#        {% csrf_token %}#}
+{#        <label for="username">{% trans 'Имя пользователя' %}</label>#}
+{#        <input type="text" name="username" id="username">#}
+{#        <label for="password">{% trans 'Пароль' %}</label>#}
+{#        <input type="password" name="password" id="password">#}
+{#        {% if login_error %}#}
+{#            <label  class="errors">{{ login_error }}</label>#}
+{#        {% endif %}#}
+{#        <button type="submit">Login</button>#}
+{#    </form>#}
+{#    </div>#}
+{#{% endblock %}#}

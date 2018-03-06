@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load i18n %}
+
+{% block title %}
+    {{ block.super }} - {% trans 'Новое упражение' %}
+{% endblock %}
+{% block content %}
+
+    <div class="container">
+        <br>
+        <h2 style="text-align: center">{% trans 'Новое упражение' %}</h2>
+        <div class="row">
+            <div class="col-sm-12">
+                <form method="post" novalidate>
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button class="btn btn-secondary" type="submit">{% trans 'Создать' %}</button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
